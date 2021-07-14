@@ -11,7 +11,7 @@ namespace RegexUserRegistration
         public const string UserLastName = "^[A-Z]{1}[A-Za-z]{2,}$";
         public const string UserEmail = "^abc.[A-Za-z1-9]*@bl.co.[a-z]*$";
         public const string UserMobileNumber = "^[1-9]{1}[0-9]{0,3}\\s[1-9]{1}[0-9]{9}$";
-        public const string UserPassword = "^[A-Za-z1-9.@!#$&]{8,}$";
+        public const string UserPassword = "^(?=.*[A-Z])[A-Za-z1-9.@!#$&%^*]{8,}$";
 
 
         public bool ValidateFirstName(String firstName)
