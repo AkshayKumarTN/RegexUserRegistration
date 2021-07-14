@@ -14,6 +14,8 @@ namespace RegexUserRegistration
             string firstName = Convert.ToString(Console.ReadLine());
             Console.Write(" Enter Last Name : ");
             string lastName = Convert.ToString(Console.ReadLine());
+            Console.Write(" Enter Email : ");
+            string email = Convert.ToString(Console.ReadLine());
 
             if (regexUser.ValidateFirstName(firstName))
                 Console.WriteLine("\n First Name \"" + firstName + "\" is Valid");
@@ -23,6 +25,10 @@ namespace RegexUserRegistration
                 Console.WriteLine(" Last Name \"" + lastName + "\" is Valid");
             else
                 Console.WriteLine(" Last Name \"" + lastName + "\" is InValid");
+            if (regexUser.ValidateEmail(email))
+                Console.WriteLine(" Email \"" + email + "\" is Valid");
+            else
+                Console.WriteLine(" Email \"" + email + "\" is InValid");
 
 
         }
