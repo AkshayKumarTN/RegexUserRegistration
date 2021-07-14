@@ -10,6 +10,7 @@ namespace RegexUserRegistration
         public const string UserFirstName = "^[A-Z]{1}[A-Za-z]{2,}$";
         public const string UserLastName = "^[A-Z]{1}[A-Za-z]{2,}$";
         public const string UserEmail = "^abc.[A-Za-z1-9]*@bl.co.[a-z]*$";
+        public const string UserMobileNumber = "^[1-9]{1}[0-9]{0,3}\\s[1-9]{1}[0-9]{9}$";
 
 
         public bool ValidateFirstName(String firstName)
@@ -23,6 +24,10 @@ namespace RegexUserRegistration
         public bool ValidateEmail(String email)
         {
             return Regex.IsMatch(email, UserEmail);
+        }
+        public bool ValidateMobileNumber(String mobileNumber)
+        {
+            return Regex.IsMatch(mobileNumber, UserMobileNumber);
         }
 
 
