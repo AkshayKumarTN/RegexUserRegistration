@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace RegexUserRegistration
 {
@@ -41,8 +42,32 @@ namespace RegexUserRegistration
                 Console.WriteLine(" Password \"" + password + "\" is Valid");
             else
                 Console.WriteLine(" Password \"" + password + "\" is InValid");
+            Console.WriteLine();
 
-
+            // Validating Sample Emails............
+            List<string> sampleEmailList = new List<string>()
+            {
+                "abc@yahoo.com",
+                "abc-100@yahoo.com",
+                "abc.100@yahoo.com",
+                "abc111@abc.com",
+                "abc-100@abc.net",
+                "abc.100@abc.com.au",
+                "abc@1.com",
+                "abc@gmail.com.com",
+                "abc+100@gmail.com"
+            };
+            foreach (string emails in sampleEmailList)
+            {
+                if (regexUser.ValidateEmail(emails))
+                {
+                    Console.WriteLine(" [ "+emails+" ]\t is Valid Email");
+                }
+                else
+                {
+                    Console.WriteLine(" [ "+emails+" ]\t is Invalid Email");
+                }
+            }
         }
     }
 }
