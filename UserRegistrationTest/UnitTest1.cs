@@ -61,51 +61,71 @@ namespace UserRegistrationTest
             //Assert
             Assert.IsTrue(result);
         }
-        //Sad Test Cases(Test Cases Fail The Entry)
+
         [TestMethod]
-        public void UserFistNameValidationReturnFalse()
+        public void UserFistNameValidationReturnCustomInvalidFirstNameException()
         {
-            string firstName = "akshay";
-            //Act
-            bool result = user.ValidateFirstName(firstName);
-            //Assert
-            Assert.IsFalse(result);
+            try
+            {
+                string firstName = "akshay";
+                bool result = user.ValidateFirstName(firstName);
+            }
+            catch (InvalidUserDetailException e)
+            {
+                Assert.AreEqual("Invalid First Name", e.Message);
+            }
         }
         [TestMethod]
-        public void UserLastNameValidationReturnFalse()
+        public void GivenUserLastNameValidationReturnCustomInvalidLastNameException()
         {
-            string lastName = "kumar";
-            //Act
-            bool result = user.ValidateFirstName(lastName);
-            //Assert
-            Assert.IsFalse(result);
+            try
+            {
+                string lastName = "kumar";
+                bool result = user.ValidateLastName(lastName);
+            }
+            catch (InvalidUserDetailException e)
+            {
+                Assert.AreEqual("Invalid Last Name", e.Message);
+            }
         }
         [TestMethod]
-        public void EmailIdValidationReturnFalse()
+        public void GivenEmailIdValidationReturnCustomInvalidEmailException()
         {
-            string email = "Akshay.com";
-            //Act
-            bool result = user.ValidateEmail(email);
-            //Assert
-            Assert.IsFalse(result);
+            try
+            {
+                string email = "Akshay.com";
+                bool result = user.ValidateEmail(email);
+            }
+            catch (InvalidUserDetailException e)
+            {
+                Assert.AreEqual("Invalid Email", e.Message);
+            }
         }
         [TestMethod]
-        public void MobileNumberValidationReturnFalse()
+        public void MobileNumberValidationReturnCustomInvalidMobileException()
         {
-            string mobileNumber = "91 0123456789";
-            //Act
-            bool result = user.ValidateMobileNumber(mobileNumber);
-            //Assert
-            Assert.IsFalse(result);
+            try
+            {
+                string mobileNumber = "91 0123456789";
+                bool result = user.ValidateMobileNumber(mobileNumber);
+            }
+            catch (InvalidUserDetailException e)
+            {
+                Assert.AreEqual("Invalid Mobile Number", e.Message);
+            }
         }
         [TestMethod]
-        public void PasswordValidationReturnFalse()
+        public void PasswordValidationReturnCustomInvalidPasswordException()
         {
-            string password = "akshay@123*";
-            //Act
-            bool result = user.ValidatePassword(password);
-            //Assert
-            Assert.IsFalse(result);
+            try
+            {
+                string password = "akshay@123*";
+                bool result = user.ValidatePassword(password);
+            }
+            catch (InvalidUserDetailException e)
+            {
+                Assert.AreEqual("Invalid Password", e.Message);
+            }
         }
 
         // Parameterised Test to validate multiple entry for the Email Address..........
